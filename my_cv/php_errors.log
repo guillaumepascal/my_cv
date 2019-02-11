@@ -1,0 +1,1 @@
+[11-Feb-2019 09:59:32 UTC] PHP Fatal error:  Cannot use App\Controller\Request as Request because the name is already in use in /home/ubuntu/workspace/my_cv/src/Controller/ExperiencesController.php on line 11
