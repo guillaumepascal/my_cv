@@ -2,26 +2,24 @@
 
 namespace App\Form;
 
-use App\Entity\Formations;
+use App\Entity\Loisirs;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class FormationsType extends AbstractType
+class LoisirsType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Description')
-            ->add('DateDebut')
-            ->add('DateFin')
+            ->add('type')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Formations::class,
+            'data_class' => Loisirs::class,
         ]);
     }
 }

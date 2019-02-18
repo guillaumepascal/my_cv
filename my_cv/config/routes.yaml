@@ -9,15 +9,9 @@ index:
     path: /lucky/number
     controller: App\Controller\LuckyController::number
     
-form_experiences:
-    path: /experiences/create
-    controller: App\Controller\ExperiencesController::create
     
-valid_experiences:
-    path: /experiences/valid
-    controller: App\Controller\ExperiencesController::valid
+experience:
+    path: /experience
+    controller: App\Controller\ExperienceController::number
     
-form_formations:
-    path: /formations/create
-    controller: App\Controller\FormationsController::create
     

@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Experiences;
+use App\Entity\Experience;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method Experiences|null find($id, $lockMode = null, $lockVersion = null)
- * @method Experiences|null findOneBy(array $criteria, array $orderBy = null)
- * @method Experiences[]    findAll()
- * @method Experiences[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Experience|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Experience|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Experience[]    findAll()
+ * @method Experience[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ExperiencesRepository extends ServiceEntityRepository
+class ExperienceRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, Experiences::class);
+        parent::__construct($registry, Experience::class);
     }
 
     // /**
-    //  * @return Experiences[] Returns an array of Experiences objects
+    //  * @return Experience[] Returns an array of Experience objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class ExperiencesRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Experiences
+    public function findOneBySomeField($value): ?Experience
     {
         return $this->createQueryBuilder('e')
             ->andWhere('e.exampleField = :val')

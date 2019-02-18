@@ -53,14 +53,15 @@
 		<section>
 			<div class="sectionTitle">
 				<h1>Experiences</h1>
+				<a href="{{ path('experience_new', {}) }}" target="_blank">Créer</a>
 			</div>
 			
 			<div class="sectionContent">
 				<article>
-					<h2>Leclerc</h2>
-					<p class="subDetails">Janvier 2019 - Maintenant</p>
-						{% for experience in experiences %}
-						{{ experience.getdescription() }}
+						{% for experience in experience %}
+						{{ experience.getDescription() }}
+						<a href="{{ path('experience_edit', {'id':experience.getId()}) }}" target="_blank">Editer</a>
+						<a href="{{ path('experience_delete', {'id':experience.getId()}) }}" target="_blank">Supprimer</a>
 						<br>
 						{% endfor %}
 				</article>
@@ -94,14 +95,15 @@
 		<section>
 			<div class="sectionTitle">
 				<h1>Formations</h1>
+				<a href="{{ path('formations_new', {}) }}" target="_blank">Créer</a>
 			</div>
 			
 				<div class="sectionContent">
 				<article>
-					<h2>Lycée du Fouillou</h2>
-					<p class="subDetails">Bacalauréat</p>
 						{% for formation in formations %}
-						{{ formation.getType() }}
+						{{ formation.getDescription() }}
+						<a href="{{ path('formations_edit', {'id':formation.getId()}) }}" target="_blank">Editer</a>
+						<a href="{{ path('formations_delete', {'id':formation.getId()}) }}" target="_blank">Supprimer</a>
 						<br>
 						{% endfor %}
 				</article>
@@ -112,14 +114,15 @@
 		<section>
 			<div class="sectionTitle">
 				<h1>Loisirs</h1>
+				<a href="{{ path('loisirs_new', {}) }}" target="_blank">Créer</a>
 			</div>
 			
 				<div class="sectionContent">
 				<article>
-					<h2>Activités Sportives</h2>
-					<p class="subDetails">Ce que j'aime faire</p>
 						{% for loisir in loisirs %}
 						{{ loisir.getType() }}
+						<a href="{{ path('loisirs_edit', {'id':loisir.getId()}) }}" target="_blank">Editer</a>
+						<a href="{{ path('loisirs_delete', {'id':loisir.getId()}) }}" target="_blank">Supprimer</a>
 						<br>
 						{% endfor %}
 				</article>

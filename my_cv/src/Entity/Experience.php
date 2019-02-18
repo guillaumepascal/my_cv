@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\FormationsRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ExperienceRepository")
  */
-class Formations
+class Experience
 {
     /**
      * @ORM\Id()
@@ -15,6 +15,11 @@ class Formations
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Type;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -34,6 +39,18 @@ class Formations
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->Type;
+    }
+
+    public function setType(string $Type): self
+    {
+        $this->Type = $Type;
+
+        return $this;
     }
 
     public function getDescription(): ?string

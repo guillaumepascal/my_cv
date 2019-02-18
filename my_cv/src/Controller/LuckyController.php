@@ -4,8 +4,9 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Formations;
-use App\Entity\Experiences;
+use App\Entity\Experience;
 use App\Entity\Loisirs;
 
 class LuckyController extends Controller
@@ -19,7 +20,7 @@ class LuckyController extends Controller
         ->findAll();
         
          $exp = $this->getDoctrine()
-        ->getRepository(Experiences::class)
+        ->getRepository(Experience::class)
         ->findAll();
         
          $loi = $this->getDoctrine()
@@ -29,8 +30,16 @@ class LuckyController extends Controller
         return $this->render('lucky/number.html.twig', array(
             'number' => $number,
             'formations'=>$forma,
-            'experiences'=>$exp,
+            'experience'=>$exp,
             'loisirs'=>$loi,
         ));
+    }
+    
+    /**
+     * @Route("/admin")
+     */
+    public function admin()
+    {
+        return new Response('<html><body>Admin page!</body></html>');
     }
 }

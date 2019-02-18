@@ -2,30 +2,27 @@
 
 namespace App\Form;
 
-use App\Entity\Experiences;
+use App\Entity\Experience;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-class ExperiencesType extends AbstractType
+class ExperienceType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('date')
-            ->add('time')
-            ->add('description')
-            ->add('save', SubmitType::class, [
-                'attr' => ['class' => 'save'],
-            ])
+            ->add('Type')
+            ->add('Description')
+            ->add('DateDebut')
+            ->add('DateFin')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Experiences::class,
+            'data_class' => Experience::class,
         ]);
     }
 }
